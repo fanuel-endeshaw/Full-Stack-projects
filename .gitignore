@@ -1,0 +1,8 @@
+# Dependency folder, typically very large
+node_modules/
+
+# Environment variable file, contains secrets
+.env
+
+# VS Code settings that are local only
+.vscode/settings.json
