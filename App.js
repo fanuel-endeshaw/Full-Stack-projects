@@ -14,11 +14,9 @@ export default function App() {
   return (
     <>
       <Provider store={store}>
-        <NavigationContainer>
-          <MainNavigation></MainNavigation>
-          {/* <MainStackNavigation /> */}
-          {/* <MyTabs /> */}
-        </NavigationContainer>
+           <NavigationContainer>
+                <MainNavigation></MainNavigation>
+            </NavigationContainer>
       </Provider>
     </>
   );
