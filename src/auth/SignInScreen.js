@@ -84,7 +84,7 @@ const SignInScreen = () => {
             showsVerticalScrollIndicator={false}
           >
 
-         
+          
     
       <Image
         source={require("../../assets/appLogo.png")}
