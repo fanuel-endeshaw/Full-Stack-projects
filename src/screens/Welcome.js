@@ -27,7 +27,7 @@ const Welcome = () => {
           <View style={styles.logoContainer}>
             <Animated.Image
               entering={FadeInUp.duration(700).delay(700)}
-              source={require("../../assets/appLogo.png")}
+              source={require("../../assets/sena.png")}
               style={styles.logo}
               resizeMode="contain"
             />

@@ -2,8 +2,11 @@ import { StyleSheet, Text, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeScreen } from "../screens/HomeScreen";
 import { CartScreen } from "../screens/CartScreen";
-// import { ProfileScreen } from "../screens/ProfileScreen";
-import { Ionicons } from "@expo/vector-icons";
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import Home from "./Home";
+
 const tab = createBottomTabNavigator();
 const MyTabs = () => {
   return (
@@ -20,19 +23,32 @@ const MyTabs = () => {
       <tab.Screen
         options={{
           tabBarIcon: ({ size, color }) => (
-            <Ionicons size={size} color={color} name="home"></Ionicons>
+            // <Ionicons size={size} color={color} name=""></Ionicons>
+            <MaterialCommunityIcons name="newspaper" size={24} color="black" />
           ),
         }}
         name="Home"
-        component={HomeScreen}
+        component={Home}
+        // component={HomeScreen}
       />
       <tab.Screen
         options={{
           tabBarIcon: ({ size, color }) => (
-            <Ionicons size={size} color={color} name="cart"></Ionicons>
+            // <Ionicons size={size} color={color} name="cart"></Ionicons>
+            <MaterialIcons name="favorite" size={24} color="black" />
           ),
         }}
-        name="Cart"
+        name="Favorites"
+        component={CartScreen}
+      />
+      <tab.Screen
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            // <Ionicons size={size} color={color} name="cart"></Ionicons>
+            <Ionicons name="person" size={24} color="black" />
+          ),
+        }}
+        name="Profile"
         component={CartScreen}
       />
       {/* <tab.Screen

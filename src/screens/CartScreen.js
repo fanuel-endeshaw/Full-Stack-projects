@@ -21,6 +21,7 @@ import Buttons from "../component/Buttons";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { removeProductFromCart } from "../store/Cartslice";
+import BreakingBadge from "../component/BreakingBadge";
 export function CartScreen() {
   const { item } = useSelector((state) => state.cartslice);
   const navigation = useNavigation();
@@ -29,6 +30,7 @@ export function CartScreen() {
   return (
     <SafeAreaView style={styles.container}>
       {/* <CheckoutItems></CheckoutItems> */}
+      
       <FlatList
         data={item}
         keyExtractor={(item) => item.id}

@@ -16,7 +16,7 @@ const Buttons = ({
       activeOpacity={0.6}
       style={[
         styles.buttons,
-        { backgroundColor: backgroundColor, width: width, height: height,opacity: disabled ? 0.7 :  1 } ]}
+        { backgroundColor: backgroundColor, width: width, height: height,opacity: disabled ? 0.8 :  1 } ]}
       disabled={disabled}
       
     >{

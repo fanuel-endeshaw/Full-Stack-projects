@@ -30,15 +30,7 @@ const SignInScreen = () => {
       console.log( username, password)
       return;
     }
-    // else{
-      // console.log("post");
-      
-      // const response=await axiosInstance.post("/auth",{
-      //   username,password
-      // })
-      // console.log(response.data);
-        // }
-        try {
+          try {
           setLoading(true)
           const response = await axiosInstance.post('/auth', {
             username: username,
@@ -68,9 +60,6 @@ const SignInScreen = () => {
         }
   }
 
-
-
-
   return (
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView
@@ -87,7 +76,7 @@ const SignInScreen = () => {
           
     
       <Image
-        source={require("../../assets/appLogo.png")}
+        source={require("../../assets/sena.png")}
         style={styles.logo}
       ></Image>
       <AppInput placeHolder="Email" onChangeText={setUsername}></AppInput>
@@ -119,12 +108,11 @@ const SignInScreen = () => {
 };
 
 export default SignInScreen;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: "center",
-    // paddingHorizontal: 15,
-    // paddingTop: 100,
+    backgroundColor: "white"
   },
   logo: {
     width: 200,

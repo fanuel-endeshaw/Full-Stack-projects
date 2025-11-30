@@ -9,7 +9,7 @@ import { authService } from "../config/axiosConfig";
 const stack = createStackNavigator();
 const MainNavigation = () => {
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   const [loading, setLoading] = useState(true);
   const checkAuthStatus = async () => {
     try {

@@ -21,6 +21,7 @@ const SignUpScreen = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
 
 
@@ -28,9 +29,11 @@ const handleSubmit=async ()=>{
   if(username==""&&email==""&&password==""){
     Alert.alert("Error","fill the required")
     console.log(username, email, password)
+    return
   }
-  else{
+  
     try {
+      setLoading(true)
       const response = await axiosInstance.post('/register', {
         username,
         email,
@@ -50,7 +53,11 @@ const handleSubmit=async ()=>{
       const errorMessage = error.response?.data?.message || 'Unable to create account. Please try again.';
       Alert.alert('Error', errorMessage);
     } 
+    finally{
+    setLoading(false)
   }
+  
+  
 }
 
   return (
@@ -66,7 +73,7 @@ const handleSubmit=async ()=>{
             showsVerticalScrollIndicator={false}
           >
             <Image
-              source={require("../../assets/appLogo.png")}
+              source={require("../../assets/sena.png")}
               style={styles.logo}
             />
             <AppInput placeHolder="Username" onChangeText={setUsername} />
@@ -76,12 +83,14 @@ const handleSubmit=async ()=>{
             <Buttons
               backgroundColor="black"
               onpress={handleSubmit}
+              disabled={loading}
             >
               Sign Up
             </Buttons>
             <Buttons
               backgroundColor="white"
               color="black"
+              
               onpress={() => navigation.navigate("SignIn")}
             >
               Go to Sign In
@@ -98,6 +107,7 @@ export default SignUpScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "white"
   },
   keyboardView: {
     flex: 1,
